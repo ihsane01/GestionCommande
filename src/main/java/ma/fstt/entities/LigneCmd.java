@@ -1,7 +1,7 @@
 package ma.fstt.entities;
 
 import javax.enterprise.context.ApplicationScoped;
-
+@ApplicationScoped
 public class LigneCmd {
 
 	private int Qtecmd;

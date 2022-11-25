@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +18,7 @@ import ma.fstt.entities.Client;
 /**
  * Servlet implementation class ClientServlet
  */
+
 @WebServlet("/client")
 public class ClientServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -119,7 +121,8 @@ public class ClientServlet extends HttpServlet {
         String prenom = request.getParameter("prenom");
         String adress = request.getParameter("adress");
         String tele =request.getParameter("adress");
-
+       
+      
         Client newClient = new Client(nom, prenom,adress, tele);
         clientDAO.insertClient(newClient);
         response.sendRedirect("client?action=list");
